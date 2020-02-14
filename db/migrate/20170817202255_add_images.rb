@@ -1,4 +1,5 @@
-class AddImages < ActiveRecord::Migration[4.2]
+MIGRATION_CLASS = ActiveRecord::VERSION::MAJOR < 5 ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
+class AddImages < MIGRATION_CLASS
   def change
     create_table :mosaico_images do |t|
       t.string  :file,      null: false

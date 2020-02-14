@@ -22,6 +22,8 @@ rescue LoadError
 end
 
 module Mosaico
+  mattr_accessor :devise_user_model
+  @@devise_user_model = :user
   DEFAULT_LOCALE = :en
 
   autoload :LocalImageBackend,       'mosaico/local_image_backend'

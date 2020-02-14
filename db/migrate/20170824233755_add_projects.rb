@@ -1,4 +1,5 @@
-class AddProjects < ActiveRecord::Migration[4.2]
+MIGRATION_CLASS = ActiveRecord::VERSION::MAJOR < 5 ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
+class AddProjects < MIGRATION_CLASS
   def change
     create_table :mosaico_projects do |t|
       t.text :html
