@@ -98,8 +98,9 @@ module Mosaico
           match = host_app_route.path.to_regexp.match(params[:src])
           start = match[0].size
 
-          id = Mosaico::Engine.routes.recognize_path(params[:src][start..-1])[:id].to_i
-          params[:src].split('/')[-1].to_i if id <= 0
+          id = Mosaico::Engine.routes.recognize_path(params[:src][start..-1])[:id]
+          id = params[:src].split('/')[-1]  if id.to_i <= 0
+          id
         end
       end
     end
