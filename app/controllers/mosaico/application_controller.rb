@@ -6,7 +6,7 @@ module Mosaico
     ##
     # set current user used by mosaico based on project devise model name
     def current_user
-      send("current_#{Mosaico.devise_user_model}")
+      send("current_#{Mosaico.devise_user_model}") if Mosaico.devise_user_model.to_s != 'user'
     end
 
     private
