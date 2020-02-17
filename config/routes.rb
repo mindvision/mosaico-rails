@@ -1,6 +1,6 @@
 Mosaico::Engine.routes.draw do
   resources :projects, only: [:create, :show, :update]
-  get '/projects/:template_name/new', to: 'projects#new'
+  get '/projects/:template_name/new', to: 'projects#new', as: :new_project
 
   resources :templates, param: :template_name, only: [:show]
 
