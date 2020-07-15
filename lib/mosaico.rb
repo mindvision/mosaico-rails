@@ -26,10 +26,6 @@ module Mosaico
   @@devise_user_model = :user
   DEFAULT_LOCALE = :en
 
-  autoload :LocalImageBackend,       'mosaico/local_image_backend'
-  autoload :LocalPlaceholderBackend, 'mosaico/local_placeholder_backend'
-  autoload :LocalBackend,            'mosaico/local_backend'
-
   class << self
     include Mosaico::Engine.routes.url_helpers
 
